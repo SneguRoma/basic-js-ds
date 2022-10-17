@@ -39,12 +39,13 @@ class BinarySearchTree {
     return search(this.root1, data);
 
     function search(node, data) {        
+      if (!node || data == null) {
+        return false;
+      } 
       if (node.data === data) {
         return true;
       }
-      if (!node) {
-        return false;
-      } 
+      
       if(data > node.data) return search(node.right, data);    
         else return search(node.left, data);      
     }
@@ -54,12 +55,13 @@ class BinarySearchTree {
     return search(this.root1, data);
 
     function search(node, data) {        
+      if (!node || data == null) {
+        return null;
+      }
       if (node.data === data) {
         return node;
       }
-      if (!node) {
-        return null;
-      } 
+       
       if(data > node.data) return search(node.right, data);    
         else return search(node.left, data);      
     }
